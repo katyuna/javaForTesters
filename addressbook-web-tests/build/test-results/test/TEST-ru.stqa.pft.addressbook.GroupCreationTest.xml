@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.GroupCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-07T06:25:08" hostname="LAPTOP-4P1260FK" time="1.12">
+  <properties/>
+  <testcase name="testGroupCreation" classname="ru.stqa.pft.addressbook.GroupCreationTest" time="1.12"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

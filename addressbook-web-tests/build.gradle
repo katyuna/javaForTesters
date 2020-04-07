@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testng:testng:6.9.10'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5'
+    implementation 'io.github.qsy7.java.dependencies:slf4j-api:0.1.0'
+    implementation 'io.github.qsy7.java.dependencies:slf4j-log4j12:0.1.0'
+
+
+}
+
+test {
+    useTestNG()
+}

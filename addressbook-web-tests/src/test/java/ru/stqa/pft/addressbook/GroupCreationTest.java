@@ -9,6 +9,12 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.Logger;
+
+private static final Logger logger = Logger.getLogger(TestClass.class);
+
+logger.error("АЛЯРМа!")
+
 public class GroupCreationTest {
     FirefoxDriver wd;
 
@@ -24,6 +30,7 @@ public class GroupCreationTest {
         //login
         wd.get("http://localhost/addressbook/");
         login("admin", "secret");
+
     }
 
     private void login(String username, String password) {

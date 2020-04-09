@@ -3,27 +3,19 @@ package ru.stqa.pft.addressbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.Logger;
-
-private static final Logger logger = Logger.getLogger(TestClass.class);
-
-logger.error("АЛЯРМа!")
-
 public class GroupCreationTest {
     FirefoxDriver wd;
 
-    @BeforeMethod
-    public void setUp(){
-        //wd = new FirefoxDriver();
+    //@BeforeMethod
+    @BeforeTest
+    public void setUp() {
         System.setProperty("webdriver.gecko.driver", "C:\\KATYUNA\\Education\\Java\\JavaForTesters\\Projects\\javaForTesters\\geckodriver.exe");
-       //driver.get("http://seleniumhq.com");
-
 
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -44,13 +36,13 @@ public class GroupCreationTest {
     }
 
     @Test
-    private void testGroupCreation (){
+    private void testGroupCreation() {
         gotoGroupPage();
         initGroupCreation();
         fillGroupForm(new GroupData("test1", "test2", "test3"));
         submitGroupCreation();
         returnToGroupPage();
-    }
+        }
 
     private void returnToGroupPage() {
         wd.findElement(By.linkText("group page")).click();
@@ -73,23 +65,26 @@ public class GroupCreationTest {
     }
 
     private void initGroupCreation() {
+
         wd.findElement(By.name("new")).click();
     }
 
     private void gotoGroupPage() {
+
         wd.findElement(By.linkText("groups")).click();
     }
 
-    @AfterMethod
-    public void tearDown(){
+    //@AfterMethod
+    @AfterTest
+    public void tearDown() {
         wd.quit();
     }
 
-    public static boolean isAlertPresents(FirefoxDriver wd){
+    public static boolean isAlertPresents(FirefoxDriver wd) {
         try {
             wd.switchTo().alert();
             return true;
-        } catch (NoAlertPresentException e){
+        } catch (NoAlertPresentException e) {
             return false;
         }
     }
